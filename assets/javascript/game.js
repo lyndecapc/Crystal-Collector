@@ -124,7 +124,7 @@ $(document).on("click", ".image", function () {
     if (totalClicks > targetNumber) {
         alert("You lose")
         losses++
-        $(".losses").html("losses:" + losses)
+        $(".losses").html("Losses:" + losses)
         totalClicks = 0
         loadPage()
     }
@@ -136,7 +136,7 @@ $(document).on("click", ".image", function () {
     if (totalClicks === targetNumber) {
         alert("You win")
         wins++
-        $(".wins").html("wins:" + wins)
+        $(".wins").html("Wins:" + wins)
         totalClicks = 0
         loadPage()
     }
