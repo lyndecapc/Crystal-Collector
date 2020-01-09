@@ -18,8 +18,8 @@ var wins = 0;
 
 var losses =0;
 
-$(".wins").html("wins: " + wins)
-$(".losses").html("losses" + losses)
+$(".wins").html("Wins: " + wins)
+$(".losses").html("Losses: " + losses)
 
 var targetNumber = Math.ceil(Math.random() * 101) + 19
 
@@ -122,7 +122,7 @@ $(document).on("click", ".image", function () {
     $(".sum").html("<h1>" + totalClicks + "</h1>")
 
     if (totalClicks > targetNumber) {
-        alert("You lose")
+        alert("You lose!")
         losses++
         $(".losses").html("Losses:" + losses)
         totalClicks = 0
@@ -134,7 +134,7 @@ $(document).on("click", ".image", function () {
     // if statements only take true conditions
     // "5"===5 , this would be false because its not only measuring the number, its also measuring the type. Triple equal has to have the type and the value match in order to be true.
     if (totalClicks === targetNumber) {
-        alert("You win")
+        alert("You win!")
         wins++
         $(".wins").html("Wins:" + wins)
         totalClicks = 0
