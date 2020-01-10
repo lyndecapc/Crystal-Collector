@@ -1,8 +1,6 @@
 //GLOBAL VARIABLES
 var wins = 0;
-
 var losses = 0;
-
 var totalClicks = 0;
 
 $(".wins").html("Wins: " + wins);
@@ -11,6 +9,7 @@ $(".losses").html("Losses: " + losses);
 //RANDOM TARGET NUMBER
 var targetNumber = Math.ceil(Math.random() * 101) + 19;
 
+//TESTING
 console.log(targetNumber);
 
 document.querySelector("#targetNumber").textContent = targetNumber;
