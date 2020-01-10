@@ -17,10 +17,23 @@ p {
     font-weight: bold;
     text-align: left;
     padding-left: 325px;
-    margin-right: 485px;
+    margin-right: 460px;
+    margin-left: 25px;
     font-family: 'Henny Penny', cursive;
 }
 
 .crystalImages {
     align-items: center;
+    margin-left: 25px;
+    margin-right: 25px;
+}
+
+.instructions {
+    background-color: rgb(245, 93, 32);
+    color: rgb(78, 74, 74);
+    font-size: 21px;
+    font-family: 'Henny Penny', cursive;
+    position: absolute;
+    margin-left: 925px;
+    margin-right: 25px;
 }
