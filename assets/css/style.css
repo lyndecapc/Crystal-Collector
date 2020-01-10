@@ -17,7 +17,7 @@ p {
     font-weight: bold;
     text-align: left;
     padding-left: 325px;
-    margin-right: 460px;
+    margin-right: 755px;
     margin-left: 25px;
     font-family: 'Henny Penny', cursive;
 }
@@ -31,9 +31,9 @@ p {
 .instructions {
     background-color: rgb(245, 93, 32);
     color: rgb(78, 74, 74);
-    font-size: 21px;
+    font-size: 25px;
     font-family: 'Henny Penny', cursive;
     position: absolute;
-    margin-left: 925px;
+    margin-left: 950px;
     margin-right: 25px;
 }

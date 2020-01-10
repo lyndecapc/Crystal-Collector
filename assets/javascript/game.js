@@ -1,55 +1,21 @@
-// Step 1: how do i randomize my target number
-// Step 2: how do i get the cystals to have different numbers
-// Step 2.5: how do i display my target number on the index (home page)
-// Step 3: how do i keep count of wins and losses
-// Step 4: what determines a win or loss (over/under #)
-// Step 5: how do i increase my win counts by 1 if i get the target #
-// Step 6: how do i increase the loss count by 1 if i go over
-// Step 7: how do i reset the game after a win/loss
-
+//GLOBAL VARIABLES
 var wins = 0;
 
 var losses = 0;
 
+var totalClicks = 0;
+
 $(".wins").html("Wins: " + wins);
 $(".losses").html("Losses: " + losses);
 
+//RANDOM TARGET NUMBER
 var targetNumber = Math.ceil(Math.random() * 101) + 19;
 
 console.log(targetNumber);
 
 document.querySelector("#targetNumber").textContent = targetNumber;
 
-var Crystal1 = Math.ceil(Math.random() * 11) + 1;
-
-console.log(Crystal1);
-
-var Crystal2 = Math.ceil(Math.random() * 11) + 1;
-
-console.log(Crystal2);
-
-var Crystal3 = Math.ceil(Math.random() * 11) + 1;
-
-console.log(Crystal3);
-
-var Crystal4 = Math.ceil(Math.random() * 11) + 1;
-
-console.log(Crystal4);
-
-var totalClicks = 0;
-
 function loadPage() {
-  //.text function only puts text
-  // $(".crystalImages").text("<h1>hi Lynde</h1>")
-
-  // .html function puts text and reads html formatting
-  // $(".crystalImages").html("<h1 style='color:red'>h1</h1>")
-  // .append is similar to .html except it doesn't overwrite itself (from top to bottom)
-  // .prepend is .append but from bottom to top
-
-  // if it has "", its static, if it doesn't, its dynamic. Dynamic means its always changing (you can use it again and again)
-  // the left side of the () is the name of the attribute, the right side is the value
-  // every time you use the < symbol, that means you're creating something dynamic
   $(".crystalImages").empty();
   $(".sum").empty();
   $("#targetNumber").empty();
@@ -58,6 +24,7 @@ function loadPage() {
 
   console.log(targetNumber);
 
+  //RANDOM CRYSTAL VALUES and TESTING
   Crystal1 = Math.ceil(Math.random() * 11) + 1;
 
   console.log(Crystal1);
@@ -74,6 +41,7 @@ function loadPage() {
 
   console.log(Crystal4);
 
+  //Using attr to set RANDOM VALUE TO IMAGES)
   var img1 = $("<img>");
   img1.attr("src", "./assets/images/crystal-1.jpg");
   img1.attr("class", "image");
@@ -94,22 +62,20 @@ function loadPage() {
   img4.attr("class", "image");
   img4.attr("data-id", Crystal4);
 
+  //Inserting images in the HTML Doc
   $(".crystalImages").append(img1, img2, img3, img4);
 }
 loadPage();
 
-// selector is inside the (document), document means to select everything in the window
+//Return number value associated with image and total points sum
 $(document).on("click", ".image", function() {
-  //alert("test")
-  // "this" is the current action that you're performing (whatever you're clicking on)
-
   var getImageValue = parseInt($(this).attr("data-id"));
 
   totalClicks = totalClicks + getImageValue;
 
-  //before you start using the function, you identify the selector name. In this case, the selector is the class.
   $(".sum").html(totalClicks);
 
+  //CONDITIONS FOR WL, WRITING NUMBER of WL to DOC, ALERTING WL, RELOAD GAME
   if (totalClicks > targetNumber) {
     alert("You lose!");
     losses++;
